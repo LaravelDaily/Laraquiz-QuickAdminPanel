@@ -11,7 +11,8 @@
         "intervention/image": "^2.3",
         "doctrine/dbal": "^2.5",
         "laravel/socialite": "^2.0",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.6",
