@@ -11,6 +11,12 @@ It's an open-source version of online Laravel quiz at [LaraQuiz.com](http://lara
 
 ## How to use
 
+#### Using Docker
+- Clone the repository with __git clone__
+- Run __make setup__
+- Access via __http://localhost:8888__
+
+#### Without Docker
 - Clone the repository with __git clone__
 - Copy __.env.example__ file to __.env__ and edit database credentials there
 - Run __composer install__
