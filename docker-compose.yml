@@ -29,6 +29,8 @@ services:
       MYSQL_DATABASE: laraquiz
       MYSQL_USER: laraquiz
       MYSQL_PASSWORD: secret
+    ports:
+      - "33061:3306"
     networks:
       - laraquiz
 
