@@ -1,34 +1,33 @@
-MAKEPATH := $(abspath $(lastword $(MAKEFILE_LIST)))
-PWD := $(dir $(MAKEPATH))
-DIR := $(subst -,,$(shell basename $(CURDIR) | tr A-Z a-z))
-APP := $(DIR)_app_1
-NETWORK := $(DIR)_laraquiz
+docker = docker-compose run --rm app
+composer-install = $(docker) php bin/composer install
+migrate = ./docker/wait-for-it.sh -q -t 8 db:3306 -- $(docker) php artisan migrate
 
 setup:
 	docker-compose build
 	docker-compose up -d --force-recreate
-	docker run -it --rm -v $(PWD):/opt -w /opt --network=$(NETWORK) php:7-fpm chmod o+w -R storage bootstrap/cache
+	$(docker) chmod o+w -R storage bootstrap/cache
     ifeq ($(wildcard bin/composer),)
 	    php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=bin/ --filename=composer
     endif
-	php bin/composer install
+	$(composer-install)
     ifeq ($(wildcard .env),)
 	    cp .env.example .env
-	    php artisan key:generate
+	    $(docker) php artisan key:generate
     endif
-	docker exec -it $(APP) php artisan migrate --seed
+	$(migrate)
 
 up:
 	docker-compose up -d
-	docker exec -it $(APP) php artisan migrate
+	$(composer-install)
+	$(migrate)
 
 artisan:
-	docker run -it --rm -v $(PWD):/opt -w /opt --network=$(NETWORK) php:7-fpm php artisan $(filter-out $@,$(MAKECMDGOALS))
+	$(docker) php artisan $(filter-out $@,$(MAKECMDGOALS))
 
 down:
 	docker rm -f $(shell docker ps -aq) && docker volume rm `docker volume ls -q`
 
 tinker:
-	docker run -it --rm -v $(PWD):/opt -w /opt --network=$(NETWORK) php:7-fpm php artisan tinker
+	$(docker) php artisan tinker
 
 .PHONY: setup up down tinker artisan
