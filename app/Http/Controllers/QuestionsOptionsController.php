@@ -66,9 +66,9 @@ class QuestionsOptionsController extends Controller
             'questions' => \App\Question::get()->pluck('question_text', 'id')->prepend('Please select', ''),
         ];
 
-        $questionsoption = QuestionsOption::findOrFail($id);
+        $questions_option = QuestionsOption::findOrFail($id);
 
-        return view('questions_options.edit', compact('questionsoption') + $relations);
+        return view('questions_options.edit', compact('questions_option') + $relations);
     }
 
     /**
@@ -99,9 +99,9 @@ class QuestionsOptionsController extends Controller
             'questions' => \App\Question::get()->pluck('question_text', 'id')->prepend('Please select', ''),
         ];
 
-        $questionsoption = QuestionsOption::findOrFail($id);
+        $questions_option = QuestionsOption::findOrFail($id);
 
-        return view('questions_options.show', compact('questionsoption') + $relations);
+        return view('questions_options.show', compact('questions_option') + $relations);
     }
 
 
