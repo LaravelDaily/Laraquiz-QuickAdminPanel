@@ -7,6 +7,13 @@ It's an open-source version of online Laravel quiz at [LaraQuiz.com](http://lara
 
 __Notice__: originally created with Laravel 5.3, it was upgraded to Laravel 5.6 in March 2018.
 
+## Clickable live-demo
+
+[demo-laraquiz.quickadminpanel.com](http://demo-laraquiz.quickadminpanel.com)
+
+- __Email__: admin@admin.com
+- __Pass__: password
+
 ![LaraQuiz screenshot](http://webcoderpro.com/laraquiz-demo1.png)
 
 ![LaraQuiz screenshot 2](http://webcoderpro.com/laraquiz-demo2.png)
