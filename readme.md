@@ -14,9 +14,9 @@ __Notice__: originally created with Laravel 5.3, it was upgraded to Laravel 5.6 
 - __Email__: admin@admin.com
 - __Pass__: password
 
-![LaraQuiz screenshot](http://webcoderpro.com/laraquiz-demo1.png)
+![LaraQuiz screenshot](https://quickadminpanel.com/assets/pages/demos/demo-laraquiz-01.png)
 
-![LaraQuiz screenshot 2](http://webcoderpro.com/laraquiz-demo2.png)
+![LaraQuiz screenshot 2](https://quickadminpanel.com/assets/pages/demos/demo-laraquiz-02.png)
 
 ## How to use
 
