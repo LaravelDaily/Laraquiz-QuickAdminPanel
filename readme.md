@@ -15,7 +15,7 @@ __Notice__: originally created with Laravel 5.3, it was upgraded to Laravel 5.6 
 - __Pass__: password
 
 ![LaraQuiz screenshot](https://quickadminpanel.com/assets/pages/demos/demo-laraquiz-01.png)
-
+![LaraQuiz screenshot](https://www.phpcodingstuff.com/category/laravel-7-tutorial.html)
 ![LaraQuiz screenshot 2](https://quickadminpanel.com/assets/pages/demos/demo-laraquiz-02.png)
 
 ## How to use
